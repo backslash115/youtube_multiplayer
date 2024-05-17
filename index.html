@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Multi Video Player</title>
+  </head>
+  <body>
+    <div class="searchBar">
+      <input
+        type="text"
+        id="youtubeUrl"
+        placeholder="Paste youtube link here"
+        style="width: 300px"
+      />
+      <button onclick="convertAndEmbed()">Add Video</button>
+      <div id="iFrameContainer"></div>
+    </div>
+
+    <script src="video_player.js"></script>
+  </body>
+</html>
