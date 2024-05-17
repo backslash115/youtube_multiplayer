@@ -19,8 +19,8 @@ function embedYouTubeVideo(videoId) {
     //Creating the iframe container upon button press
 
     const iFrame = document.createElement("iframe");
-    iFrame.width = "600";
-    iFrame.height = "400";
+    iFrame.width = "400";
+    iFrame.height = "225";
     iFrame.src = embedUrl;
 
     // Create a unique id for each iframe

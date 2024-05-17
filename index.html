@@ -5,18 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/x-icon" href="/icons/favicon.png" />
-
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
     <title>Multi Video Player</title>
   </head>
   <body>
     <div class="searchBar">
-      <input
-        type="text"
-        id="youtubeUrl"
-        placeholder="Paste youtube link here"
-        style="width: 300px"
-      />
-      <button onclick="convertAndEmbed()">Add Video</button>
+      <div class="inputBar">
+        <input
+          type="text"
+          id="youtubeUrl"
+          placeholder="Paste youtube link here"
+          style="width: 300px"
+        />
+        
+        <button class="addVideoBtn" onclick="convertAndEmbed()">
+          Add Video
+        </button>
+      </div>
+
       <div id="iFrameContainer"></div>
     </div>
 
