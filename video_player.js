@@ -16,14 +16,30 @@ function embedYouTubeVideo(videoId) {
   if (videoId) {
     var embedUrl = "https://www.youtube.com/embed/" + videoId;
 
-    //Creating the iframe container upon button press 
-    let container = document.getElementById("iFrameContainer");
+    //Creating the iframe container upon button press
+
     const iFrame = document.createElement("iframe");
-    iFrame.id = "videoId";
     iFrame.width = "600";
     iFrame.height = "400";
-    container.appendChild(iFrame);
     iFrame.src = embedUrl;
+
+    // Create a unique id for each iframe
+    const uniqueId = "video-" + videoId;
+    iFrame.id = uniqueId;
+
+    // Create a remove button
+    const removeButton = document.createElement("button");
+    // removeButton.className("button-6");
+    removeButton.textContent = "Remove";
+
+    removeButton.onclick = function () {
+      removeYouTubeVideo(uniqueId);
+    };
+
+    // Append iframe and button to the container
+    let container = document.getElementById("iFrameContainer");
+    container.appendChild(iFrame);
+    container.appendChild(removeButton);
   } else {
     alert("Invalid YouTube URL");
   }
@@ -37,4 +53,15 @@ function convertAndEmbed() {
 
   // Clearing the input field
   document.getElementById("youtubeUrl").value = "";
+}
+
+function removeYouTubeVideo(videoId) {
+  var iFrame = document.getElementById(videoId);
+  var removeButton = iFrame.nextSibling; // Assuming button is added right after the iframe
+  if (iFrame) {
+    iFrame.remove();
+  }
+  if (removeButton) {
+    removeButton.remove();
+  }
 }
