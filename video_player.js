@@ -37,9 +37,16 @@ function embedYouTubeVideo(videoId) {
     };
 
     // Append iframe and button to the container
-    let container = document.getElementById("iFrameContainer");
+    let iframecontainer = document.getElementById("iFrameContainer");
+
+    let container = document.createElement("div");
+    container.className = "video-container";
     container.appendChild(iFrame);
     container.appendChild(removeButton);
+
+    iframecontainer.appendChild(container);
+
+    
   } else {
     alert("Invalid YouTube URL");
   }

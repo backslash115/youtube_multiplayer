@@ -69,3 +69,11 @@ button:hover{
     border-color: #e40000;
     border-radius: 4px;
 }
+
+
+/* IFRAME CONTAINER STYLE */
+
+.video-container{
+    display: flex;
+    flex-direction: column;
+}
